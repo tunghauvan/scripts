@@ -21,11 +21,9 @@ def main():
     parser.add_argument('--index-prefix', type=str, required=True)
     parser.add_argument('--days-before', type=int, required=True)
     parser.add_argument('--host', type=str, default='localhost:9200')
-    parser.add_argument('--basic-auth', type=str, default=None)
     
     args = parser.parse_args()
     
-    #
     print('index_prefix: {}'.format(args.index_prefix))
     print('days_before: {}'.format(args.days_before))
         
