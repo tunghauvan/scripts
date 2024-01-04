@@ -7,7 +7,7 @@ def process_delete_index(es, index_prefix, days_before):
     date_str = (datetime.datetime.now() - datetime.timedelta(days=days_before)).strftime("%Y.%m.%d")
         
     # Get indices
-    indices = es.indices.get(index='{}-{}'.format(index_prefix, date_str))
+    indices = es.indices.get(index='{}-{}'.format(index_prefix, date_str), ignore_unavailable=True).keys()
     
     # Delete indices
     for index in indices:
