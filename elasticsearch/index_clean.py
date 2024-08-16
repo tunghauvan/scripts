@@ -15,7 +15,7 @@ def process_delete_indices_before_days(es, index_prefix, days_before):
     
     # Delete indices
     for index in indices_to_delete:
-        # es.indices.delete(index=index)
+        es.indices.delete(index=index)
         print('deleted index: {}'.format(index))
 
 
